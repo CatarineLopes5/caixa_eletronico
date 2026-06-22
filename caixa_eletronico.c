@@ -3,7 +3,7 @@
 
 void main(){
    float saldo = 1000.00;
-   float deposito,saque;
+   float deposito,saque,emprestimo,pagamento;
    int opcao;
 
    printf("Boa noite!\n");
@@ -35,7 +35,7 @@ void main(){
 		   saldo = saldo + deposito;
 		   printf("\n Seu Deposito foi realizado!\n");
 		   printf("\n Consulte seu saldo no MENU INICIAL \n");
-		   printf("___________________________________________\n");
+		   printf("\n___________________________________________\n");
 		   break;
 
 	   
@@ -54,22 +54,46 @@ void main(){
 
 	   //Solicitar um  Empréstimo
 	   case 4:
-		   printf("\nOpção para pedir um empréstimo.\n");
-		   printf("___________________________________________\n");
+		   printf("\n_________________________________________\n");
+		   printf("\nDigite o valor para o emprestimo: \n");
+		   scanf("%f", &emprestimo);
+
+		   saldo = saldo + emprestimo;
+		   printf("\nEmprestimo realizado com sucesso!\n");
+		   printf("\nConsulte seu saldo no MENU INICIAL\n"); 
+		   printf("\n___________________________________________\n");
 		   break;
 
 
 	   //Pagar o Empréstimo
 	   case 5: 
-		   printf("\nOpção para pagar o empréstimo.\n");
-		   printf("____________________________________________\n");
+		   printf("\n-------------------------------------------\n");
+		   if (emprestimo <= 0){
+			   printf("\n Você não realizou nenhum Empréstimo até o momento\n");
+		   }else{
+			   printf("\n Digite o valor do Empréstimo que será pago:");
+			   scanf("%f", &pagamento);
+
+			   emprestimo = emprestimo - pagamento;
+			   saldo = saldo - pagamento;
+
+			   printf("\n Pagamento recebido com sucesso!\n");
+			   printf("\n COnsulte seu saldo ou o seus empréstimos no MENU INICIAL\n");
+
+		   printf("\n____________________________________________\n");
 		   break;
+		   }
 
 	   //Consultar os empréstimos feitos
 	   case 6:
-		   printf("\nOpção para consultar empréstimos.\n");
-		   printf("______________________________________________\n");	  
+		   printf("\n___________________________________________\n");
+		   if (emprestimo <= 0){
+			  printf("\n Você não realizou nenhum empréstimo até o momento\n");
+		   }else{
+			  printf("\n Você possui de empréstimo R$ %.2f reais.\n",emprestimo); 
+		   printf("\n______________________________________________\n");	  
 		   break;
+		   }
 
 	   //Sair do sistema
 	   case 7: printf("\nVolte sempre!!");
