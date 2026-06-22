@@ -3,8 +3,64 @@
 
 void main(){
    float saldo = 1000.00;
-    
+   int opcao;
+
    printf("Boa noite!\n");
-   printf(" Seu Saldo inicial é de R$ %.2f reais.\n",saldo);
+
+
+  do{
+	  printf("\n _____|MENU INICIA|_____*\n");
+  	  printf("\n |1|-Verificar Saldo\n |2|-Depositar Valor\n |3|-Sacar Valor\n |4|-Solicitar Empréstimo\n |5|-Pagar Empréstimo\n |6|-Consultar Empréstimo\n |7|-SAIR\n"); 
+  	  printf("\nDigite um numero correspondente a sua necesidade:");
+ 
+  	   scanf("%d", &opcao);
+
+   	   switch(opcao){
+
+	   //verificar saldo
+	   case 1:
+		   printf("\nSeu saldo é de R$ %.2f reais.\n",saldo);
+		   printf("__________________________________________\n");
+		   break;
+
+	   //Despositar valor
+	   case 2:
+		   printf("\nOpção para depositar um valor.\n");
+		   printf("___________________________________________\n");
+		   break;
+	   
+	   //Sacar valor
+	   case 3:
+		   printf("\nOpção para sacar um valor.\n");
+		   printf("___________________________________________\n");
+		   break;
+
+	   //Solicitar um  Empréstimo
+	   case 4:
+		   printf("\nOpção para pedir um empréstimo.\n");
+		   printf("___________________________________________\n");
+		   break;
+
+	   //Pagar o Empréstimo
+	   case 5: 
+		   printf("\nOpção para pagar o empréstimo.\n");
+		   printf("____________________________________________\n");
+		   break;
+
+	   //Consultar os empréstimos feitos
+	   case 6:
+		   printf("\nOpção para consultar empréstimos.\n");
+		   printf("______________________________________________\n");	  
+		   break;
+
+	   //Sair do sistema
+	   case 7: printf("\nVolte sempre!!");
+		   break;
+
+	   default:
+		   printf("\nOpcao invalida. Tente novamente.\n");
+    }
+
+  } while (opcao != 7);
 
 }
